@@ -1,15 +1,13 @@
 package screens;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class VentanaPrincipal extends JFrame {
-    public JDesktopPane deskop; // Escritorio dentre del Frame
+public class VentanaPrincipal extends JFrame{
+    public JDesktopPane desktop;  // Escritorio dentro del Frame
     private JMenuBar jMenuBar;
     private JMenu jMenuAlumnos;
     private JMenu jMenuCarreras;
@@ -18,61 +16,62 @@ public class VentanaPrincipal extends JFrame {
     private JMenuItem jMenuItemInsertarCarreras;
     private JMenuItem jMenuItemVerCarreras;
 
-    public VentanaPrincipal(String title) {
+    public VentanaPrincipal(String title){
         this.setTitle(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
-
     }
 
-    private void initComponents() {
-        deskop = new JDesktopPane();
-        this.add(deskop);
-        //Barra de menu
+    private void initComponents(){
+        // DesktopPane - escritorio
+        desktop = new JDesktopPane();
+        this.add(desktop);
+        this.setContentPane(desktop); 
+        // Barra de Menu
         jMenuBar = new JMenuBar();
-        this.add(jMenuBar);
-        //Menu Alumnos
+        // this.add(jMenuBar);
+        // Menu Alumnos
         jMenuAlumnos = new JMenu();
         jMenuAlumnos.setText("Alumnos");
-        //Menu Item Insertar
+        // Elemento de menu: Insertar
         jMenuItemInsertar = new JMenuItem();
         jMenuItemInsertar.setText("Insertar...");
-
-        jMenuItemInsertar.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent event){
-                jMenuInsertarCarrera(event);
-            }
-        });
-        //Elemento para ver alumnos
+        // Elemento de menu: Ver alumnos
         jMenuItemVerAlumnos = new JMenuItem();
         jMenuItemVerAlumnos.setText("Ver todos los alumnos...");
 
-        //Menu carreras
+        // Menú Carreras
         jMenuCarreras = new JMenu();
         jMenuCarreras.setText("Carreras");
-        //Elementos de menu: Ver Carreras
+        // Elemento de menu: Ver Carreras
         jMenuItemVerCarreras = new JMenuItem();
-        jMenuItemVerCarreras.setText("Ver todas las Carreras...");
-        //Elemento para insertar carreras
+        jMenuItemVerCarreras.setText("Ver todas las carreras...");
+        // Elemento de menu: Insertar carrera
         jMenuItemInsertarCarreras = new JMenuItem();
-        jMenuItemInsertarCarreras.setText("Insertar Carrera..");
+        jMenuItemInsertarCarreras.setText("Insertar...");
+
+        jMenuItemInsertarCarreras.addActionListener(e -> jmiInsertarCarreras());
+       
 
 
-
-
-
-        //Agregar menuItem a menu
-        jMenuAlumnos.add(jMenuItemInsertar);
+        // Agregar menuItem a menu 
         jMenuAlumnos.add(jMenuItemVerAlumnos);
+        jMenuAlumnos.add(jMenuItemInsertar);
         jMenuBar.add(jMenuAlumnos);
-        //Agregar menu de carreras al menUBar
+
         jMenuCarreras.add(jMenuItemVerCarreras);
         jMenuCarreras.add(jMenuItemInsertarCarreras);
         jMenuBar.add(jMenuCarreras);
 
         this.setJMenuBar(jMenuBar);
         pack();
-        
-        
     }
+
+    private void jmiInsertarCarreras(){
+        JInternalFrameInsertarCarrera insertarCarrera = new JInternalFrameInsertarCarrera();
+        this.desktop.add(insertarCarrera);
+        insertarCarrera.setVisible(true);
+    }
+
+    
 }
