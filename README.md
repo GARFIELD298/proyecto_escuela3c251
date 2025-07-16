@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
@@ -21,3 +22,6 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 Este proyecto muestra la conexion entre postgresql y 
 ademas de la creación con iua usando Java Swing  
+=======
+# proyecto_escuela3c25
+>>>>>>> 1635364a1ff0515625c9d1e60ea5e20afead8880
