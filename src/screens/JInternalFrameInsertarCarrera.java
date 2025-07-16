@@ -1,7 +1,7 @@
 package screens;
 
 import java.awt.Font; //Necesaria para cambiar el tipo de letra
-import javax.swing.GroupLayout; //Necesario para el diseño del Layout
+import javax.swing.GroupLayout; //Necesario para el diseño del layout
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -87,3 +87,4 @@ public class JInternalFrameInsertarCarrera extends JInternalFrame{
     }
     
 }
+

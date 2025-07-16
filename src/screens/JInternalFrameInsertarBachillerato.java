@@ -7,7 +7,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class JInternalFrameInsertarBachillerato extends JInternalFrame{
+public class JInternalFrameInsertarBachillerato extends JInternalFrame {
     private JLabel lblId;
     private JLabel lblNombreBachillerato;
     private JTextField txtId;
@@ -21,7 +21,7 @@ public class JInternalFrameInsertarBachillerato extends JInternalFrame{
               true,  // closable
               true,  // maximizable
               true); // iconifiable (minimizable)
-        this.setTitle("Insertar nuevo bachillerato");
+        this.setTitle("Insertar nueva bachillerato");
         this.setSize(400,400);
         initComponents();
     }
@@ -29,7 +29,7 @@ public class JInternalFrameInsertarBachillerato extends JInternalFrame{
     private void initComponents(){
         // Creación de objetos
         lblId = new JLabel("Id:");
-        lblNombreBachillerato = new JLabel("Nombre de bachillerato:");
+        lblNombreBachillerato = new JLabel("Nombre de carrera:");
         txtId = new JTextField();
         txtNombreBachillerato = new JTextField();
         btnAceptar = new JButton("Aceptar");
@@ -76,4 +76,5 @@ public class JInternalFrameInsertarBachillerato extends JInternalFrame{
                 )
         );
     }
+    
 }
